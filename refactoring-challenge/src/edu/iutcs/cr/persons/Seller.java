@@ -1,23 +1,33 @@
 package edu.iutcs.cr.persons;
 
-import java.io.Serializable;
-
 /**
  * @author Raian Rahman
  * @since 4/18/2024
  */
-public class Seller extends Person implements Serializable {
+public class Buyer extends Person {
 
-    public Seller() {
-        super();
+    private PaymentMethod paymentMethod;
+
+    public Buyer(String name, String id, String email, PaymentMethod paymentMethod) {
+        super(name, id, email);
+        this.paymentMethod = paymentMethod;
     }
 
-    public Seller(String id) {
+    public Buyer(String id) {
         super(id);
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                ", paymentMethod='" + paymentMethod + '\'';
     }
 }

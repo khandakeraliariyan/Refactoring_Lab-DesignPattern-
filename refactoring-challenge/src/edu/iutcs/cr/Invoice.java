@@ -2,6 +2,7 @@ package edu.iutcs.cr;
 
 import edu.iutcs.cr.persons.Buyer;
 import edu.iutcs.cr.persons.Seller;
+import edu.iutcs.cr.vehicles.Vehicle;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -45,6 +46,8 @@ public class Invoice implements Serializable {
     }
 
     private void markCarAsUnavailable() {
-        shoppingCart.markVehiclesAsUnavailable();
+        for(Vehicle vehicle: shoppingCart.getVehicles()) {
+            vehicle.setUnavailable();
+        }
     }
 }

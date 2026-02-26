@@ -53,32 +53,61 @@ public class SystemDatabase implements Serializable {
         return buyers;
     }
 
-    public void addBuyer(Buyer buyer) {
-        buyers.add(buyer);
-    }
-
     public Set<Seller> getSellers() {
         return sellers;
-    }
-
-    public void addSeller(Seller seller) {
-        sellers.add(seller);
     }
 
     public Set<Vehicle> getVehicles() {
         return vehicles;
     }
 
-    public void addVehicle(Vehicle vehicle) {
-        vehicles.add(vehicle);
-    }
-
     public Set<Invoice> getInvoices() {
         return invoices;
     }
 
-    public void addInvoice(Invoice invoice) {
-        invoices.add(invoice);
+    public void showInventory() {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles is present in system");
+            return;
+        }
+
+        for (Vehicle vehicle : vehicles) {
+            System.out.println(vehicle.toString());
+        }
+    }
+
+    public void showBuyerList() {
+        if (buyers.isEmpty()) {
+            System.out.println("No buyer is present in system");
+            return;
+        }
+
+        for (Buyer buyer : buyers) {
+            System.out.println(buyer.toString());
+        }
+    }
+
+    public void showSellerList() {
+        if (sellers.isEmpty()) {
+            System.out.println("No seller is present in system");
+            return;
+        }
+
+        for (Seller seller : sellers) {
+            System.out.println(seller.toString());
+        }
+    }
+
+    public void showInvoices() {
+        if(invoices.isEmpty()) {
+            System.out.println("No invoice found in system");
+            return;
+        }
+
+        for(Invoice invoice: invoices) {
+            invoice.printInvoice();
+            System.out.println("\n\n\n");
+        }
     }
 
     public Vehicle findVehicleByRegistrationNumber(String registrationNumber) {

@@ -51,6 +51,12 @@ public class ShoppingCart implements Serializable {
         vehicles.remove(new Vehicle(registrationNumber));
     }
 
+    public void markVehiclesAsUnavailable() {
+        for (Vehicle vehicle : vehicles) {
+            vehicle.setUnavailable();
+        }
+    }
+
     public void viewCart() {
         System.out.println("\n\nShopping cart\n\n");
 

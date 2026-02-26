@@ -4,30 +4,18 @@ package edu.iutcs.cr.persons;
  * @author Raian Rahman
  * @since 4/18/2024
  */
-public class Buyer extends Person {
+public class Seller extends Person {
 
-    private PaymentMethod paymentMethod;
-
-    public Buyer(String name, String id, String email, PaymentMethod paymentMethod) {
+    public Seller(String name, String id, String email) {
         super(name, id, email);
-        this.paymentMethod = paymentMethod;
     }
 
-    public Buyer(String id) {
+    public Seller(String id) {
         super(id);
-    }
-
-    public PaymentMethod getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(PaymentMethod paymentMethod) {
-        this.paymentMethod = paymentMethod;
     }
 
     @Override
     public String toString() {
-        return super.toString() +
-                ", paymentMethod='" + paymentMethod + '\'';
+        return super.toString();
     }
 }

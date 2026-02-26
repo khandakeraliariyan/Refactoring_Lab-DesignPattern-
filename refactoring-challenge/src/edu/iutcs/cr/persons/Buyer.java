@@ -1,33 +1,28 @@
 package edu.iutcs.cr.persons;
 
-import java.io.Serializable;
-import java.util.Scanner;
-
 /**
  * @author Raian Rahman
  * @since 4/18/2024
  */
-public class Buyer extends Person implements Serializable {
+public class Buyer extends Person {
 
-    private String paymentMethod;
+    private PaymentMethod paymentMethod;
 
-    public Buyer() {
-        super();
-        setPaymentMethod();
+    public Buyer(String name, String id, String email, PaymentMethod paymentMethod) {
+        super(name, id, email);
+        this.paymentMethod = paymentMethod;
     }
 
     public Buyer(String id) {
         super(id);
     }
 
-    public String getPaymentMethod() {
+    public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter new payment method:");
-        this.paymentMethod = scanner.nextLine();
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     @Override
